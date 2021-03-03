@@ -23,10 +23,11 @@ const Global = createGlobalStyle`
         background-image: radial-gradient(
             rgba(0, 150, 0, 0.75), black 120%
         );
+        width: 100vw;
         height: 100vh;
 
         color: white;
-        font: 1.3rem Inconsolata, monospace;
+        font: 1.3vw Inconsolata, monospace;
         text-shadow: 0 0 5px #C8C8C8;
     }
 
@@ -64,7 +65,7 @@ const AsciiButtonsList = styled.ul`
     justify-content: center;
     gap: 15%;
 
-    font-size: 15pt;
+    font-size: 1.5vw;
 
     a {
         padding: 0;
@@ -112,7 +113,7 @@ justify-content: flex-start;
 flex-direction: column;
 gap: 15%;
 
-font-size: 15pt;
+font-size: 1.5vw;
 
 li {
     padding: 0;
@@ -143,7 +144,7 @@ const StyledFooter = styled.footer`
     background-color: rgba(0, 0, 0, 0.2);
 
     span {
-        font-size: 8pt;
+        font-size: .7vh;
         padding-top: 1.3rem;
         text-shadow: none;
         color: #acacac;
@@ -162,7 +163,7 @@ const AsciiTextWrapper = () => {
 const Buttons = () => {
     return (
         <AsciiButtonsList>
-            <a href="https://drive.google.com/file/d/16D0nkCAM9LMQttwjgk5xI9-b3_eZwRG4/view?usp=sharing" target="_blank" rel="noreferrer"><span>download</span></a>
+            <a href="https://drive.google.com/drive/folders/1cXwoDiykKxp1sOcbUqCjV_50I0vSTMM4?usp=sharing" target="_blank" rel="noreferrer"><span>download</span></a>
             <a href="https://forms.gle/uAdDkjATs8N8sxTKA" target="_blank" rel="noreferrer"><span>review</span></a>
             <a href="https://forms.gle/cGRfAAzBJfDPditm7" target="_blank" rel="noreferrer"><span>bugs</span></a>
         </AsciiButtonsList>
