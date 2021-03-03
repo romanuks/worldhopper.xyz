@@ -23,10 +23,11 @@ const Global = createGlobalStyle`
         background-image: radial-gradient(
             rgba(0, 150, 0, 0.75), black 120%
         );
+        width: 100vw;
         height: 100vh;
 
         color: white;
-        font: 1.3rem Inconsolata, monospace;
+        font: 1.3vw Inconsolata, monospace;
         text-shadow: 0 0 5px #C8C8C8;
     }
 
@@ -65,7 +66,7 @@ justify-content: flex-start;
 flex-direction: column;
 gap: 15%;
 
-font-size: 15pt;
+font-size: 1.5vw;
 
 li {
     padding: 0;
@@ -79,6 +80,29 @@ li::before {
 }
 `
 
+const StyledTerminal = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    justify-content: center;
+`
+
+const StyledFooter = styled.footer`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    span {
+        font-size: .7vh;
+        padding-top: 1.3rem;
+        text-shadow: none;
+        color: #acacac;
+    }
+`
 const StyledTerminal = styled.div`
     margin-left: auto;
     margin-right: auto;
