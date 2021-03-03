@@ -72,7 +72,7 @@ const AsciiButtonsList = styled.ul`
         text-indent: 0;
         list-style: none;
         color: #ffffff;
-        text-shadow: 0 0 5px #f83f3f;
+        text-shadow: 0 0 5px #585858;
     }
 
     a:link {
@@ -140,7 +140,7 @@ const StyledFooter = styled.footer`
     bottom: 0;
     width: 100%;
     height: 3.5rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
 
     span {
         font-size: 8pt;
@@ -162,9 +162,9 @@ const AsciiTextWrapper = () => {
 const Buttons = () => {
     return (
         <AsciiButtonsList>
-            <a href="https://google.com" target="_blank" rel="noreferrer"><span>download</span></a>
-            <a href="https://google.com" target="_blank" rel="noreferrer"><span>review</span></a>
-            <a href="https://google.com" target="_blank" rel="noreferrer"><span>bugs</span></a>
+            <a href="https://drive.google.com/file/d/16D0nkCAM9LMQttwjgk5xI9-b3_eZwRG4/view?usp=sharing" target="_blank" rel="noreferrer"><span>download</span></a>
+            <a href="https://forms.gle/uAdDkjATs8N8sxTKA" target="_blank" rel="noreferrer"><span>review</span></a>
+            <a href="https://forms.gle/cGRfAAzBJfDPditm7" target="_blank" rel="noreferrer"><span>bugs</span></a>
         </AsciiButtonsList>
     )
 }
