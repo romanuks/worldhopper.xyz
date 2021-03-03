@@ -1,54 +1,149 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import styled, { createGlobalStyle } from "styled-components/macro"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+
+const asciiText = `
+█     █░ ▒█████   ██▀███   ██▓    ▓█████▄     ██░ ██  ▒█████   ██▓███   ██▓███  ▓█████  ██▀███
+▓█░ █ ░█░▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▀ ██▌   ▓██░ ██▒▒██▒  ██▒▓██░  ██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒
+▒█░ █ ░█ ▒██░  ██▒▓██ ░▄█ ▒▒██░    ░██   █▌   ▒██▀▀██░▒██░  ██▒▓██░ ██▓▒▓██░ ██▓▒▒███   ▓██ ░▄█ ▒
+░█░ █ ░█ ▒██   ██░▒██▀▀█▄  ▒██░    ░▓█▄   ▌   ░▓█ ░██ ▒██   ██░▒██▄█▓▒ ▒▒██▄█▓▒ ▒▒▓█  ▄ ▒██▀▀█▄  
+░░██▒██▓ ░ ████▓▒░░██▓ ▒██▒░██████▒░▒████▓    ░▓█▒░██▓░ ████▓▒░▒██▒ ░  ░▒██▒ ░  ░░▒████▒░██▓ ▒██▒
+░ ▓░▒ ▒  ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░ ▒▒▓  ▒     ▒ ░░▒░▒░ ▒░▒░▒░ ▒▓▒░ ░  ░▒▓▒░ ░  ░░░ ▒░ ░░ ▒▓ ░▒▓░
+  ▒ ░ ░    ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░ ░ ▒  ▒     ▒ ░▒░ ░  ░ ▒ ▒░ ░▒ ░     ░▒ ░      ░ ░  ░  ░▒ ░ ▒░
+  ░   ░  ░ ░ ░ ▒    ░░   ░   ░ ░    ░ ░  ░     ░  ░░ ░░ ░ ░ ▒  ░░       ░░          ░     ░░   ░ 
+    ░        ░ ░     ░         ░  ░   ░        ░  ░  ░    ░ ░                       ░  ░   ░     
+                                    ░                                                            
+`
+
+
+const Global = createGlobalStyle`
+    body{
+        margin: 0;
+        background-color: black;
+        background-image: radial-gradient(
+            rgba(0, 150, 0, 0.75), black 120%
+        );
+        height: 100vh;
+
+        color: white;
+        font: 1.3rem Inconsolata, monospace;
+        text-shadow: 0 0 5px #C8C8C8;
+    }
+
+    body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg, #00000020, #00000020, transparent 1px, transparent 2px);
+    pointer-events: none
 }
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
+`
+
+const Page = styled.div`
+margin: 0;
+`
+
+const StyledAscii = styled.div`
+padding: 30px 0px;
+display: flex;
+`
+
+const StyledAsciiPre = styled.pre`
+display: inline-block;
+margin: 20px 0 50px 0;
+`
+
+const AsciiRandomText = styled.ul`
+padding: 0;
+margin: 0 0 ${props => props.mb || "60px"} 0;
+
+display: flex;
+justify-content: flex-start;
+flex-direction: column;
+gap: 15%;
+
+font-size: 15pt;
+
+li {
+    padding: 0;
+    margin: 10px 0;
+    text-indent: 0;
+    list-style: none;
 }
 
-const paragraphStyles = {
-  marginBottom: 48,
+li::before {
+    content: "> ";
 }
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
+`
+
+const StyledTerminal = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    justify-content: center;
+`
+
+const StyledFooter = styled.footer`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    span {
+        font-size: 8pt;
+        padding-top: 1.3rem;
+        text-shadow: none;
+        color: #acacac;
+    }
+`
+
+const AsciiTextWrapper = () => {
+    return (
+        <StyledAsciiPre>
+            {asciiText}
+        </StyledAsciiPre>
+    )
 }
 
-// markup
-const NotFoundPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
+const RandomConsoleText = () => {
+    return (
+        <AsciiRandomText>
+            <li>loading...</li>
+            <li>failed</li>
+            <li>Error: why did you try to acces this page? It doesn't even exist</li>
+            <li>Warning: try to be smarter next time...</li>
+            <li>Warning: this is a 404-page, by the way</li>
+        </AsciiRandomText>
+    )
 }
 
-export default NotFoundPage
+const Ascii = () => {
+    return (
+        <StyledAscii>
+            <StyledTerminal>
+                <AsciiTextWrapper />
+                <RandomConsoleText />
+            </StyledTerminal>
+        </StyledAscii>
+    )
+}
+
+const IndexPage = () => {
+    return(
+        <Page>
+            <Global />
+            <Ascii></Ascii>
+            <StyledFooter>
+                <span>&copy; Roman Sajzew, Hopper Game Studios</span>
+            </StyledFooter>
+        </Page>
+    )
+}
+
+export default IndexPage
