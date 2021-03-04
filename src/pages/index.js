@@ -174,7 +174,7 @@ const RandomConsoleText = () => {
     return (
         <AsciiRandomText>
             <li>loading...</li>
-            <li>printing ./authors.txt...</li>
+            <li>printing ./authors.txt ...</li>
             <li>abdel, dominik, phillip, rafik, roman</li>
             <li>finished</li>
         </AsciiRandomText>
@@ -184,7 +184,7 @@ const RandomConsoleText = () => {
 const PreButtonText = margin => {
     return (
         <AsciiRandomText mb={margin}>
-            <li>Click one of the following links, to be redirected:</li>
+            <li>Click one of the following links to be redirected:</li>
         </AsciiRandomText>
     )
 }

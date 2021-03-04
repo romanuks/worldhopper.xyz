@@ -103,29 +103,6 @@ const StyledFooter = styled.footer`
         color: #acacac;
     }
 `
-const StyledTerminal = styled.div`
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-    justify-content: center;
-`
-
-const StyledFooter = styled.footer`
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    bottom: 0;
-    width: 100%;
-    height: 3.5rem;
-    background-color: rgba(0, 0, 0, 0.4);
-
-    span {
-        font-size: 8pt;
-        padding-top: 1.3rem;
-        text-shadow: none;
-        color: #acacac;
-    }
-`
 
 const AsciiTextWrapper = () => {
     return (
