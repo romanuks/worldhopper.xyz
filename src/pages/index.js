@@ -17,44 +17,84 @@ const asciiText = `
 
 
 const Global = createGlobalStyle`
-    body{
-        margin: 0;
+    html {
+        height: 100%;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        height: fill-available;
+
         background-color: black;
         background-image: radial-gradient(
             rgba(0, 150, 0, 0.75), black 120%
         );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    body {
+        margin: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
 
         color: white;
         font: 1.3vw Inconsolata, monospace;
         text-shadow: 0 0 5px #C8C8C8;
     }
 
-    body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: repeating-linear-gradient(0deg, #00000020, #00000020, transparent .3vh, transparent .6vh);
-    pointer-events: none
+    div[tabindex], #___gatsby {
+        height: 100%;
+    }
+
+
+
+    html::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: -webkit-fill-available;
+        background: repeating-linear-gradient(0deg, #00000020, #00000020, transparent .3vh, transparent .6vh);
+        background-attachment: fixed;
+        pointer-events: none
 }
 `
 
 const Page = styled.div`
-margin: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+`
+
+const Content = styled.div`
+    flex: 1 0 auto;
 `
 
 const StyledAscii = styled.div`
-padding: 30px 0px;
-display: flex;
+    padding: 30px 0px;
+    display: flex;
+`
+
+const StyledFooter = styled.footer`
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 3.5rem;
+
+    span {
+        font-size: .7vh;
+        padding-top: 1.3rem;
+        text-shadow: none;
+        color: #acacac;
+    }
 `
 
 const StyledAsciiPre = styled.pre`
-display: inline-block;
-margin: 20px 0 50px 0;
+    display: inline-block;
+    margin: 20px 0 50px 0;
 `
 
 const AsciiButtonsList = styled.ul`
@@ -134,23 +174,6 @@ const StyledTerminal = styled.div`
     justify-content: center;
 `
 
-const StyledFooter = styled.footer`
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    bottom: 0;
-    width: 100%;
-    height: 3.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
-
-    span {
-        font-size: .7vh;
-        padding-top: 1.3rem;
-        text-shadow: none;
-        color: #acacac;
-    }
-`
-
 const AsciiTextWrapper = () => {
     return (
         <StyledAsciiPre>
@@ -206,9 +229,11 @@ const IndexPage = () => {
     return(
         <Page>
             <Global />
-            <Ascii></Ascii>
+            <Content>
+                <Ascii></Ascii>
+            </Content>
             <StyledFooter>
-                <span>&copy; Roman Sajzew, Hopper Game Studios - directed and financed by ababdadel</span>
+                    <span>&copy; Roman Sajzew, Hopper Game Studios - directed and financed by ababdadel</span>
             </StyledFooter>
         </Page>
     )
