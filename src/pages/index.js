@@ -38,7 +38,7 @@ const Global = createGlobalStyle`
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: repeating-linear-gradient(0deg, #00000020, #00000020, transparent 1px, transparent 2px);
+    background: repeating-linear-gradient(0deg, #00000020, #00000020, transparent .3vh, transparent .6vh);
     pointer-events: none
 }
 `
