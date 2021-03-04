@@ -174,10 +174,8 @@ const RandomConsoleText = () => {
     return (
         <AsciiRandomText>
             <li>loading...</li>
-            <li>loaded</li>
-            <li>donations by Abdel recieved</li>
-            <li>current donations: 0.80€</li>
-            <li>all praise Abdel</li>
+            <li>printing ./authors.txt...</li>
+            <li>abdel, dominik, phillip, rafik, roman</li>
             <li>finished</li>
         </AsciiRandomText>
     )
