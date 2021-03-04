@@ -3,16 +3,15 @@ import styled, { createGlobalStyle } from "styled-components/macro"
 
 
 const asciiText = `
-█     █░ ▒█████   ██▀███   ██▓    ▓█████▄     ██░ ██  ▒█████   ██▓███   ██▓███  ▓█████  ██▀███
-▓█░ █ ░█░▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▀ ██▌   ▓██░ ██▒▒██▒  ██▒▓██░  ██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒
-▒█░ █ ░█ ▒██░  ██▒▓██ ░▄█ ▒▒██░    ░██   █▌   ▒██▀▀██░▒██░  ██▒▓██░ ██▓▒▓██░ ██▓▒▒███   ▓██ ░▄█ ▒
-░█░ █ ░█ ▒██   ██░▒██▀▀█▄  ▒██░    ░▓█▄   ▌   ░▓█ ░██ ▒██   ██░▒██▄█▓▒ ▒▒██▄█▓▒ ▒▒▓█  ▄ ▒██▀▀█▄  
-░░██▒██▓ ░ ████▓▒░░██▓ ▒██▒░██████▒░▒████▓    ░▓█▒░██▓░ ████▓▒░▒██▒ ░  ░▒██▒ ░  ░░▒████▒░██▓ ▒██▒
-░ ▓░▒ ▒  ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░ ▒▒▓  ▒     ▒ ░░▒░▒░ ▒░▒░▒░ ▒▓▒░ ░  ░▒▓▒░ ░  ░░░ ▒░ ░░ ▒▓ ░▒▓░
-  ▒ ░ ░    ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░ ░ ▒  ▒     ▒ ░▒░ ░  ░ ▒ ▒░ ░▒ ░     ░▒ ░      ░ ░  ░  ░▒ ░ ▒░
-  ░   ░  ░ ░ ░ ▒    ░░   ░   ░ ░    ░ ░  ░     ░  ░░ ░░ ░ ░ ▒  ░░       ░░          ░     ░░   ░ 
-    ░        ░ ░     ░         ░  ░   ░        ░  ░  ░    ░ ░                       ░  ░   ░     
-                                    ░                                                            
+
+[..        [..                  [..     [.. [..     [..                                           
+[..        [..                  [..     [.. [..     [..                                           
+[..   [.   [..   [..    [. [... [..     [.. [..     [..   [..    [. [..  [. [..     [..    [. [...
+[..  [..   [.. [..  [..  [..    [.. [.. [.. [...... [.. [..  [.. [.  [.. [.  [..  [.   [..  [..   
+[.. [. [.. [..[..    [.. [..    [..[.   [.. [..     [..[..    [..[.   [..[.   [..[..... [.. [..   
+[. [.    [.... [..  [..  [..    [..[.   [.. [..     [.. [..  [.. [.. [.. [.. [.. [.         [..   
+[..        [..   [..    [...   [... [.. [.. [..     [..   [..    [..     [..       [....   [...   
+                                                                 [..     [..                      
 `
 
 
@@ -73,8 +72,9 @@ const Content = styled.div`
 `
 
 const StyledAscii = styled.div`
-    padding: 30px 0px;
+    padding: 2vh 0px;
     display: flex;
+    justify-content: center;
 `
 
 const StyledFooter = styled.footer`
@@ -93,9 +93,9 @@ const StyledFooter = styled.footer`
 `
 
 const StyledAsciiPre = styled.pre`
-    font-size: .9vw;
+    font-size: 1.2vw;
     display: inline-block;
-    margin: 20px 0 50px 0;
+    margin: 1vh 0 3vh 0;
 `
 
 const AsciiButtonsList = styled.ul`
@@ -147,7 +147,7 @@ const AsciiButtonsList = styled.ul`
 
 const AsciiRandomText = styled.ul`
 padding: 0;
-margin: 0 0 ${props => props.mb || "60px"} 0;
+margin: 0 0 ${props => props.mb || "4vh"} 0;
 
 display: flex;
 justify-content: flex-start;
@@ -169,8 +169,6 @@ li::before {
 `
 
 const StyledTerminal = styled.div`
-    margin-left: auto;
-    margin-right: auto;
     display: inline-block;
     justify-content: center;
     max-width: 90%;
@@ -221,7 +219,7 @@ const Ascii = () => {
             <StyledTerminal>
                 <AsciiTextWrapper />
                 <RandomConsoleText />
-                <PreButtonText mb="20px"/>
+                <PreButtonText mb="1vh"/>
                 <Buttons />
             </StyledTerminal>
         </StyledAscii>
