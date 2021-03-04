@@ -93,6 +93,7 @@ const StyledFooter = styled.footer`
 `
 
 const StyledAsciiPre = styled.pre`
+    font-size: .9vw;
     display: inline-block;
     margin: 20px 0 50px 0;
 `
@@ -105,7 +106,7 @@ const AsciiButtonsList = styled.ul`
     justify-content: center;
     gap: 15%;
 
-    font-size: 1.5vw;
+    font-size: 1.6vw;
 
     a {
         padding: 0;
@@ -172,6 +173,8 @@ const StyledTerminal = styled.div`
     margin-right: auto;
     display: inline-block;
     justify-content: center;
+    max-width: 90%;
+    font-size: 100%;
 `
 
 const AsciiTextWrapper = () => {
@@ -198,7 +201,7 @@ const RandomConsoleText = () => {
         <AsciiRandomText>
             <li>loading...</li>
             <li>printing ./authors.txt ...</li>
-            <li>abdel, dominik, phillip, rafik, roman</li>
+            <li>abdel, dominik, phillllip, rafik, roman</li>
             <li>finished</li>
         </AsciiRandomText>
     )
@@ -233,7 +236,7 @@ const IndexPage = () => {
                 <Ascii></Ascii>
             </Content>
             <StyledFooter>
-                    <span>&copy; Roman Sajzew, Hopper Game Studios - directed and financed by ababdadel</span>
+                    <span>&copy; romanamana, Hopper Game Studios - directed and financed by ababdadel</span>
             </StyledFooter>
         </Page>
     )
