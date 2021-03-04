@@ -208,7 +208,7 @@ const IndexPage = () => {
             <Global />
             <Ascii></Ascii>
             <StyledFooter>
-                <span>&copy; Roman Sajzew, Hopper Game Studios</span>
+                <span>&copy; Roman Sajzew, Hopper Game Studios - directed and financed by ababdadel</span>
             </StyledFooter>
         </Page>
     )
